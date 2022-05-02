@@ -17,6 +17,6 @@ Responsibilities:
 
 [x] Configure Routes inside App
 
-[] Configure Public Layout 
+[x] Configure Public Layout 
 
-[] Configure Private Layout
+[x] Configure Private Layout
