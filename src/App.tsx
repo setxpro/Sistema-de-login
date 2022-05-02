@@ -1,45 +1,24 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './Components/Login';
+import ProtectedRoutes from './Components/ProtectedRoutes';
+import { AuthProvider } from './Context/AuthProvider';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/profile" element={
+        <ProtectedRoutes>
+          <h2>Hi this is a Component Profile to verify authenticated</h2>
+        </ProtectedRoutes>
+      }/>
+        
+        <Route path="/login" element={<Login/>}/>
+        <Route/>
+      </Routes>
+    </BrowserRouter> 
+    </AuthProvider>
+  );
 }
-
-export default App

@@ -6,12 +6,17 @@ yarn add antd
 
 [x] Create Context 
 
-Responsabilities: 
 
-[x] authenticate
+Responsibilities: 
 
-[x] give us the info if the user is logged in or not
+[x] Authenticate
 
-[] store state inside localStorage 
+[x] Give us the info if the user is logged in or not
 
-[] configure Routes inside App
+[x] Store state inside localStorage 
+
+[x] Configure Routes inside App
+
+[] Configure Public Layout 
+
+[] Configure Private Layout
